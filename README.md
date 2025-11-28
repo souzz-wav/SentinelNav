@@ -124,7 +124,7 @@ No libraries need to be installed. Simply download the file.
 
 ```bash
 # Clone or download the script
-wget https://raw.githubusercontent.com/user/repo/main/sentinelnav.py
+wget https://raw.githubusercontent.com/smolfiddle/SentinelNav/main/sentinelnav.py
 ```
 
 ---
